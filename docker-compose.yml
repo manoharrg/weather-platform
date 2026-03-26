@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: weatherdb
+      POSTGRES_USER: weather
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+  #```
+
+  #**`.gitignore`** at root:
+  #```
+  # Java
+  weather-api/build/
+  weather-api/.gradle/
+  *.class
+
+# React
+  weather-frontend/node_modules/
+  weather-frontend/dist/
+  
+  # IDE
+  .idea/
+  *.iml
+  .vscode/
+  
+  # Env
+  .env
+  *.env
